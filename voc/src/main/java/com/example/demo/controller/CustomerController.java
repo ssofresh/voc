@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import java.util.List;
 
@@ -21,17 +21,17 @@ public class CustomerController {
 		this.repository = repository;
 	}
 	
-	@PutMapping("/customer")
-	public Customer putCustomer(Customer customer) {
-		return repository.save(customer);
-	}
-	
-	@PostMapping("/customer")
+	@PostMapping("/customer/save")
 	public Customer postCustomer(Customer customer) {
 		return repository.save(customer);
 	}
 	
-	@DeleteMapping("/customer")
+	@PutMapping("/customer/update")
+	public Customer putCustomer(Customer customer) {
+		return repository.save(customer);
+	}
+	
+	@DeleteMapping("/customer/delete")
 	public void deleteCustomer(int id) {
 		repository.deleteById(id);
 	}
@@ -41,7 +41,7 @@ public class CustomerController {
 //		return repository.findById(id).orElse(null);
 //	}
 	
-	@GetMapping("/customer")
+	@GetMapping("/customer/get")
 	public List<Customer> getCustomerList() {
 		return (List<Customer>) repository.findAll();
 	}
