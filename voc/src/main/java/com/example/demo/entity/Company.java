@@ -16,7 +16,20 @@ import lombok.Setter;
 @Entity
 public class Company {
 	@Id
-	private int companyId; 				//사업장코드
-	//@Column(length=1024)				
-	private String companyName;				//사업장명
+	@Column(name="COMPANY_ID")
+	private int id; 				//사업장코드
+	private String name;				//사업장명
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getCompanyName() {
+		return name;
+	}
+	public void setCompanyName(String companyName) {
+		this.name = companyName;
+	}
 }
